@@ -1,0 +1,559 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* 
+ * These selection declarations have to be separate
+ * No text-shadow: twitter.com/miketaylr/status/12228805301
+ * Also: hot pink!
+ */
+
+::-moz-selection { background: #59a9ff; color: #fff; text-shadow: none; }
+::selection { background: #59a9ff; color: #fff; text-shadow: none; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a:hover, a:active { outline: 0; }
+
+/*=========================================
+	Main Styles
+=========================================*/
+
+.container {
+width: 1000px;
+margin: 0 auto;
+}
+
+.clear {
+clear: both;
+}
+
+/*=========================================
+	Blu Boxes
+=========================================*/
+.blu_0 {
+float: left;
+width: 3%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.blu_1 {
+float: left;
+width: 8%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.blu_2{
+float: left;
+width: 18%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.blu_3{
+float: left;
+width: 28%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.blu_4{
+float: left;
+width: 38%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.blu_5{
+float: left;
+width: 48%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.blu_6{
+float: left;
+width: 58%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.blu_7{
+float: left;
+width: 68%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.blu_8{
+float: left;
+width: 78%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.blu_9{
+float: left;
+width: 88%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.blu_10{
+float: left;
+width: 98%;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+/* Floats */
+
+.floatleft {
+float: left;
+}
+
+.floatright {
+float: right;
+}
+
+
+/*=========================================
+	Offsets
+=========================================*/
+.offset_0 {
+margin-left: 5%;
+}
+
+.offset_1 {
+margin-left: 10%;
+}
+
+.offset_2 {
+margin-left: 20%;
+}
+
+.offset_3 {
+margin-left: 30%;
+}
+
+.offset_4 {
+margin-left: 40%;
+}
+
+.offset_5 {
+margin-left: 50%;
+}
+
+.offset_6 {
+margin-left: 60%;
+}
+
+.offset_7 {
+margin-left: 70%;
+}
+
+.offset_8 {
+margin-left: 80%;
+}
+
+.offset_9 {
+margin-left: 90%;
+}
+
+/*=========================================
+	Afters
+=========================================*/
+.after_0 {
+margin-right: 5%;
+}
+
+.after_1 {
+margin-right: 10%;
+}
+
+.after_2 {
+margin-right: 20%;
+}
+
+.after_3 {
+margin-right: 30%;
+}
+
+.after_4 {
+margin-right: 40%;
+}
+
+.after_5 {
+margin-right: 50%;
+}
+
+.after_6 {
+margin-right: 60%;
+}
+
+.after_7 {
+margin-right: 70%;
+}
+
+.after_8 {
+margin-right: 80%;
+}
+
+.after_9 {
+margin-right: 90%;
+}
+
+
+
+
+
+/*=========================================
+	Media Queries
+=========================================*/
+
+/* This is stage 2, when the main container becomes smaller. */
+
+@media screen and (max-width: 999px) {
+.container {
+width: 720px;
+}
+}
+
+/* Stage 3, when the layout becomes fluid, and the size of the browser. */
+
+@media screen and (max-width: 719px) {
+.container {
+width: 100%;
+}
+
+}
+
+/* Here, all the elements are the same size.  This way, mobile users can also use the site. */
+
+@media screen and (max-width: 479px) {
+
+.blu_1 {
+width: 98%;
+}
+
+.blu_2 {
+width: 98%;
+}
+
+.blu_3 {
+width: 98%;
+}
+
+.blu_4 {
+width: 98%;
+}
+.blu_5 {
+width: 98%;
+}
+
+.blu_6 {
+width: 98%;
+}
+
+.blu_7 {
+width: 98%;
+}
+
+.blu_8 {
+width: 98%;
+}
+.blu_9 {
+width: 98%;
+}
+
+.blu_10 {
+width: 98%;
+}
+}
+
+/*=========================================
+	Text
+=========================================*/
+
+hr {
+width: 100%;
+border: none;
+margin-top: 12px;
+margin-bottom: 12px;
+}
+
+/*===================
+	Headers
+===================*/
+h1 {
+margin-top: 8px;
+line-height: 1;
+margin-bottom: 4px;
+font-size: 35px;
+}
+h2 {
+margin-top: 8px;
+line-height: 1;
+margin-bottom: 4px;
+font-size: 30px;
+}
+h3 {
+margin-top: 8px;
+line-height: 1;
+margin-bottom: 4px;
+font-size: 25px;
+}
+h4 {
+margin-top: 8px;
+line-height: 1;
+margin-bottom: 4px;
+font-size: 20px;
+}
+h5 {
+font-size: 15px;
+line-height: 1;
+margin-bottom: 4px;
+font-weight: bold;
+}
+h6 {
+font-size: 11px;
+line-height: 1;
+margin-bottom: 4px;
+font-weight: bold;
+}
+
+/*===================
+	Blockquotes
+===================*/
+blockquote {
+border-top: 1px solid #ababab;
+border-bottom: 1px solid #ababab;
+padding: 10px;
+margin-top: 10px;
+margin-bottom: 15px;
+}
+
+blockquote p {
+font-family: georgia;
+font-size: 24px;
+color: #717171;
+}
+
+blockquote p::before {
+ content: "\201C";
+ font-size: 36px;
+ line-height: 36px;
+}
+
+blockquote p::after {
+ content: "\201D";
+ font-size: 36px;
+ line-height: 36px;
+}
+
+blockquote cite {
+font-family: times new roman;
+font-size: 18px;
+color: #555555;
+}
+
+blockquote cite::before {
+content: "\2013 \A0";
+}
+
+/*===================
+	Links
+===================*/
+a {
+color: #55b3d9;
+text-decoration: none;
+}
+
+a:hover {
+color: #ddf0f8;
+}
+
+a:active {
+color: #333333;
+}
+
+
+/*===================
+	Random
+===================*/
+p sup {
+position: relative;
+font-size: 60%;
+bottom: 7px;
+}
+
+p sub {
+position: relative;
+font-size: 60%;
+top: 2px;
+}
+
+b, strong {
+font-weight: bold;
+}
+
+i {
+font-style: italic;
+}
+
+code, pre {
+font-family: monospace;
+}
+
+q {
+color: #919191;
+font-family: georgia;
+}
+
+q::before {
+ content: "\201C";
+ font-size: 28px;
+ line-height: 28px;
+}
+
+q::after {
+ content: "\201D";
+ font-size: 28px;
+ line-height: 28px;
+}
+
+
+/*===================
+	Lists
+===================*/
+ul {
+margin-left: 25px;
+}
+
+ul li {
+list-style: square;
+}
+
+ul li ul li {
+list-style: circle;
+margin-left: 5px;
+}
+
+
+
+ol {
+margin-left: 25px;
+}
+
+ol li {
+list-style-type: decimal;
+}
+
+ol li ol li {
+list-style-type:lower-alpha;
+margin-left: 5px;
+}
+
+dl dt {
+font-weight: bold;
+}
+
+dl dd {
+margin-left: 10px;
+}
+
+
+/*===================
+	Tables
+===================*/
+table {
+border: 1px solid #ababab;
+}
+
+td {
+padding: 5px;
+border: 1px solid #ababab;
+}
+
+/*===================
+	Images
+===================*/
+img.flashy {
+	padding: 5px;
+    border: solid 1px #DADADA;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	-webkit-transition: 400ms;
+    -moz-transition: 400ms;
+    transition: 400ms;
+	margin-bottom: 15px;
+}
+
+img.flashy:hover {
+border: solid 1px #ABABAB;
+}
+
+img.centered {
+display: block;
+margin: 0 auto;
+}
+
+img.rightalign {
+float: right;
+}
+
+img.leftalign {
+float: left;
+}

@@ -1,0 +1,137 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>LinkedIn Birthday Reminders</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	<!-- CSS concatenated and minified via ant build script-->
+	<link rel="stylesheet" href="css/blucss.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- end CSS-->
+	
+	<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+		api_key:    FillInYourAPIKeyHere
+		onLoad:     onLinkedInLoad
+		auth:       true
+	</script>
+	
+	<script type="text/javascript">
+		function onLinkedInLoad() {
+			IN.Event.on(IN, "auth", onLinkedInAuth);
+		}
+		
+		function onLinkedInAuth() {
+			IN.API.Profile("me").fields('date-of-birth').result(displayDetails);
+			IN.API.Connections("me").fields(['first-name', 'last-name', 'date-of-birth']).result(displayConnections);
+		}
+		
+		function displayDetails(profiles) { member = profiles.values[0]; }
+		
+		function displayConnections(profiles) {
+			// Send off the objects to be processed into iCal files
+			$('#downloadlink').html('<img src="img/spinner.gif" alt="Processing..." class="centered" />');
+			$.ajax('process', {
+				type: 'POST',
+				data: JSON.stringify(profiles),
+				contentType: 'text/json',
+				success: function(data) { 
+					console.log(data); 
+					$('#download_container h2').text('Download Now'); 
+					$('#downloadlink').html('<a href="' + data.path + '" class="awesome large orange">Download Birthdays</a>'); 
+					$('#main p.notes').html('<p>' + data.totalBirthdays + ' of your ' + data.totalConnections + ' connections have birthdays listed.');
+				},
+				error: function(data) { 
+					console.log(data); 
+					$('#download_container h2').text('Oops...'); 
+					$('#downloadlink').html('<p>Uhoh, it looks like something went wrong. Try refreshing the page and try again.</p>');
+				}
+			});	
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="container" class="container">
+		<header>
+			<div id="header" class="offset_1 blu_8">
+				<div id="header_title" class="offset_1 blu_6 after_1" style="padding-top:30px;"><h1>LinkedIn Birthday Reminders</h1></div>
+				<div id="header_image" class="blu_1"><img src="img/birthdaycandle.png" alt="Birthday Candle" /></div>
+				<hr />
+			</div>
+		</header>
+		
+		<div id="main" role="main" class="offset_1 blu_4">
+			<img src="img/circle_1.png" alt="Step 1" class="leftalign" style="margin-bottom:30px;" />
+			<h2>Start Here!</h2>
+			<script type="IN/Login">Hello, <?js= firstName ?> <?js= lastName ?>.</script>
+			<p class="notes">Click this button to access your LinkedIn account.</p>
+		</div>
+		
+		<div id="download_container" class="blu_4 after_1">
+			<img src="img/circle_2.png" alt="Step 2" class="leftalign" style="margin-bottom:30px;" />
+			<h2>Wait for it...</h2>
+			<div id="downloadlink"><p class="notes">Your calendar download will appear here.</p></div>
+		</div>
+		
+		<div id="explanations" class="offset_1 blu_8 topmargin">
+			<hr />
+			<div id="whatisthis" class="blu_5">
+				<img src="img/circle_3.png" alt="Step 3" class="leftalign" />
+				<h2>What is this?</h2>				
+				<p>This is a quick tool to help you keep track of your connections' special days by importing all available birthdays into the calendaring program of your choice.</p>
+				<p>This tool does not keep ANY of your personal data or that of your connections. I take privacy very seriously! After the tool crunches the data from LinkedIn, it is made available to you, and then scrubbed away.</p>
+			</div>
+			
+			<div id="howtouse" class="blu_5">
+				<h2>How do I use it?</h2>
+				<p>Step 1: Click the LinkedIn login button above. <br />Step 2: Click the download button that appears after you've logged in. <br />Step 3: Import this into your calendaring program.</p>
+				<p>Videos to come.</p>
+				<h4>Did something go wrong?</h4>
+				<a href="http://www.joshualyman.com/about-joshua-lyman/" class="large awesome blue">Contact me here please!</a></p>
+			</div>
+			
+			<div id="techspecs" class="blu_10 clear topmargin">
+				<h2>Tech Specs, talk to me</h2>
+				<p>I wanted a small project to familiarize myself with Node.js, and also needed a way to keep track of all those birthdays. This tool uses:
+					<ul>
+						<li>The LinkedIn Javascript API</li>
+						<li>One Node.js instance on the server</li>
+						<li>Just a little bit of Javascript and jQuery on the page itself.</li>
+					</ul></p>
+			</div>
+		</div>
+		
+		<footer class="clear">
+			<div class="footer blu_10"><hr /><p>Copyright &copy; 2011, <a href="http://www.joshualyman.com">Joshua Lyman</a>. All mentions of LinkedIn are &copy; of the LinkedIn Corporation.</p></div>
+		</footer>
+	</div> <!--! end of #container -->
+	
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+	
+	
+	<!-- scripts concatenated and minified via ant build script-->
+	<!--<script defer src="js/plugins.js"></script>
+	<script defer src="js/script.js"></script>-->
+	<!-- end scripts-->
+	
+	
+	<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+
+</body>
+</html>

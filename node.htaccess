@@ -1,0 +1,10 @@
+# This is the .htaccess file in our document root.
+Options +FollowSymLinks -Indexes -MultiViews
+AddType application/octet-stream .ics
+
+<IfModule mod_rewrite.c>
+        RewriteEngine on
+
+        # More complicated (the user sees only "benchmark.html" in their address bar)
+        RewriteRule ^process$ http://www.[YOUR DOMAIN HERE].com:6000/linkedin-birthday-reminders/process [P]
+</IfModule>
